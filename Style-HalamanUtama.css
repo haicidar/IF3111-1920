@@ -1,0 +1,98 @@
+.container-1{
+    width: 700px;
+    vertical-align: middle;
+    white-space: nowrap;
+    position: relative;
+    margin: 30px auto;
+
+  }
+
+.container-1 input#search{
+  width: 700px;
+  height: 50px;
+  background: #ffffff;
+  border: none;
+  font-size: 10pt;
+  float: left;
+  color: #818181;
+  padding-left: 45px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  box-shadow:0 0 1px 1px rgb(97, 97, 97);
+   
+    -webkit-transition: background .55s ease;
+  -moz-transition: background .55s ease;
+  -ms-transition: background .55s ease;
+  -o-transition: background .55s ease;
+  transition: background .55s ease;
+
+
+}
+
+.container-1 input#search:hover, .container-1 input#search:focus, .container-1 input#search:active{
+    outline:none;
+    background: #2b303b;
+  }
+  .container-1 input#search::-webkit-input-placeholder {
+    color: #65737e;
+ }
+  
+ .container-1 input#search:-moz-placeholder { /* Firefox 18- */
+    color: #65737e;  
+ }
+  
+ .container-1 input#search::-moz-placeholder {  /* Firefox 19+ */
+    color: #65737e;  
+ }
+  
+ .container-1 input#search:-ms-input-placeholder {  
+    color: #65737e;  
+ }
+
+ .banner{
+  
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    font-size: 70px;
+    letter-spacing: 2px;
+    word-spacing: 2px;
+    color: #000000;
+    font-weight: normal;
+    text-decoration: none;
+    font-style: normal;
+    font-variant: normal;
+    text-transform: none;
+    margin: 30px auto;
+    text-align: center;
+
+    }
+
+
+
+    .atastextarea a {
+  
+        font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+        font-size: 15px;
+        letter-spacing: 2px;
+        word-spacing: 2px;
+        color: #000000;
+        font-weight: normal;
+        text-decoration: none;
+        font-style: normal;
+        font-variant: normal;
+        text-transform: none;
+        margin: 70px auto;
+        text-align: center;
+        text-decoration: none;
+        text-decoration-line: none;
+
+        }
+
+
+            .atastextarea a:hover {
+
+                color: #65737e;
+                text-align: center;
+                margin: 70px auto;
+                
+            }

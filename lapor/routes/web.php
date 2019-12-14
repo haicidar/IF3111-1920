@@ -12,3 +12,4 @@
 */
 
 Route::get('/', 'LaporController@index');
+Route::get('/detail/{id}', 'LaporController@detail');

@@ -10,13 +10,19 @@ class LaporController extends Controller
 {
     public function index(){
         $data = Lapor::get();
-        return view ('index', ['data' =>$data]);
+        return view ('index', ['data' => $data]);
+    }
+
+    public function detail($id){
+        //search data by id and show it
+        $data = Lapor::find($id)->first();
+        return view('detail', ['data' => $data]);
     }
 
     public function search($q){
         $data = Lapor::where('report', 'LIKE', 'a%')->first();
         $data->get();
-        return view('detail', ['data' => $data]);
+        return view('index', ['data' => $data]);
     }
 
     public function uploadProcess(Request $data){
@@ -44,20 +50,12 @@ class LaporController extends Controller
 
     public function delete($id){        
         // hapus data
-        Data::where('id', $id)->delete();
+        Lapor::where('id', $id)->delete();
 
         // hapus file
         $data = Lapor::where('id', $id)->first();
         File::delete('attachment/' . $data->file);
 
         return redirect('/');
-    }
-
-    public function detail($id){
-        //search data by id and show it
-        $data = Lapor::where('id', $id)->first();
-        $data->get();
-
-        return view('detail', ['data' => $data]);
     }
 }

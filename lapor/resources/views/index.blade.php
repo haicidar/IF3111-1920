@@ -21,16 +21,15 @@
 <body>
     <div id = "javas">
     <div class="banner">Simple lapor !</div>
-    <form method="POST" action="#" accept-charset="UTF-8" data-request="complaint::onCreate" class="complaint-form" data-request-flash=""><input name="_session_key" type="hidden" >
     <div class="container-1">
         <input type="search" id="search" placeholder="Search..." />
+        <button type="submit" onclick="searchData()">Cari</button>
     </div>
     <br><br>
     <div class="atastextarea" text-align="center">   
-        <a href="" >Buat Laporan/Komentar</a>
+        <a href="#" onclick="create()">Buat Laporan/Komentar</a>
     </div>
     <br><br>
-    </form>
     
     @foreach($data as $d)  
     <hr width="70%">
@@ -47,7 +46,7 @@
 
         <div class="atribut ">
             <a style="float: left">Dokumen : {{$d->file}}</p>
-            <a href="#" onclick="showDetail({{$d->id}})"> Lihat Selengkapnya ></a>
+            <a href="#" onclick="showDetail({{ $d->id }})"> Lihat Selengkapnya ></a>
             <a>  Waktu : {{$d->updated_at}} &ensp; </a>
         </div>
     </div>
@@ -55,52 +54,52 @@
     </div>
 
     <script>
-    function create() {
-        var xhttp = new XMLHttpRequest();
-        xhttp.onreadystatechange = function() {
-            if (this.readyState == 4 && this.status == 200) {
-            document.getElementById("javas").innerHTML =
-            this.responseText;
-            }
-        };
-        xhttp.open("GET", "/create", true);
-        xhttp.send();
-    }
+        function create() {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("javas").innerHTML =
+                this.responseText;
+                }
+            };
+            xhttp.open("GET", "/create", true);
+            xhttp.send();
+        }
 
+        function showDetail(i) {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("javas").innerHTML = this.responseText;
+                }
+            };
+            xhttp.open("GET", "/detail/"+i, true);
+            xhttp.send();
+        }
+        
+        function deleteData(i) {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("javas").innerHTML =
+                this.responseText;
+                }
+            };
+            xhttp.open("GET", "/delete/"+i, true);
+            xhttp.send();
+        }
 
-    function showDetail(i) {
-        var xhttp = new XMLHttpRequest();
-        xhttp.onreadystatechange = function() {
-            if (this.readyState == 4 && this.status == 200) {
-            document.getElementById("javas").innerHTML = this.responseText;
-            }
-        };
-        xhttp.open("GET", "/detail/"+i, true);
-        xhttp.send();
-    }
-    function deleteData(i) {
-        var xhttp = new XMLHttpRequest();
-        xhttp.onreadystatechange = function() {
-            if (this.readyState == 4 && this.status == 200) {
-            document.getElementById("javas").innerHTML =
-            this.responseText;
-            }
-        };
-        xhttp.open("GET", "/delete/"+i, true);
-        xhttp.send();
-    }
-
-    function searchData(q) {
-        var xhttp = new XMLHttpRequest();
-        xhttp.onreadystatechange = function() {
-            if (this.readyState == 4 && this.status == 200) {
-            document.getElementById("search").innerHTML =
-            this.responseText;
-            }
-        };
-        xhttp.open("GET", "/search/a", true);
-        xhttp.send();
-    }
+        function searchData(q) {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("search").innerHTML =
+                this.responseText;
+                }
+            };
+            xhttp.open("GET", "/search/"+q, true);
+            xhttp.send();
+        }
     </script>
 </body>
 </html>

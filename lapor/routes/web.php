@@ -14,5 +14,7 @@
 Route::get('/', 'LaporController@index');
 Route::get('/detail/{id}', 'LaporController@detail');
 Route::get('/create', 'LaporController@create');
+Route::post('/create/add', 'LaporController@createAdd');
 Route::get('/delete/{id}', 'LaporController@delete');
+Route::get('/search/{q}', 'LaporController@search');
 

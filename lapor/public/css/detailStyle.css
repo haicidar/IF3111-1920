@@ -363,15 +363,10 @@ font-family: 'Raleway', Helvetica, Arial, sans-serif;
       font-family: 'Raleway', Helvetica, Arial, sans-serif;
       font-weight: bold;
       border-radius: 8px;
-
-
       }
 
 
-      .detail-list .atribut a.tombol:hover{
-     
-    box-shadow:0 0 4px 1px rgb(7, 157, 184);;
-    
+      .detail-list .atribut a.tombol:hover{  
 
         color: rgb(253, 253, 253);
         }

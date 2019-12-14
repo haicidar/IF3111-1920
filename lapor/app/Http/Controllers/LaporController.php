@@ -10,12 +10,12 @@ class LaporController extends Controller
 {
     public function index(){
         $data = Lapor::get();
-        return view ('index', ['data' => $data]);
+        return view ('index', ['data' => $data->reverse()]);
     }
 
     public function detail($id){
         //search data by id and show it
-        $data = Lapor::find($id)->first();
+        $data = Lapor::find($id);
         return view('detail', ['data' => $data]);
     }
 
@@ -23,8 +23,8 @@ class LaporController extends Controller
         return view('create');
     }
 
-    public function createProcess(Request $data){
-        $this->validate($data, [
+    public function createAdd(Request $data){
+        $this->validate($data,[
             'title' => 'required',
             'file' => 'required|file|image|mimes:jpeg,png,gif,webp|max:2048',
             'report' => 'required',
@@ -43,7 +43,11 @@ class LaporController extends Controller
             'report' => $data->report,
             'aspect' => $data->aspect
         ]);
-        return redirect('/');
+        return back();
+    }
+
+    public function edit(){
+        return view('edit');
     }
 
     public function delete($id){
@@ -58,8 +62,7 @@ class LaporController extends Controller
     }
 
     public function search($q){
-        $data = Lapor::where('report', 'LIKE', 'a%')->first();
-        $data->get();
+        $data = Lapor::where('report', 'LIKE', '%'.$q)->get();
         return view('index', ['data' => $data]);
     }
 }

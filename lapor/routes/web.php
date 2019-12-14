@@ -11,6 +11,18 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('Halaman Utama');
+// });
+
+
+// Route::get('/Halaman Lapor', function () {
+//     return view('Halaman Lapor');
+// });
+
+Route::get('/', 'UtamaController@index');
+ 
+
+Route::get('/Halaman Lapor', 'PagesController@lapor');
+  
+

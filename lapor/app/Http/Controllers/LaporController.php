@@ -46,8 +46,28 @@ class LaporController extends Controller
         return back();
     }
 
-    public function edit(){
-        return view('edit');
+    public function edit($id){
+        $data = Lapor::find($id);
+        return view('edit', ['data' => $data]);
+    }
+
+    public function editData(Request $req){
+        $this->validate($req,[
+            'file' => 'file|image|mimes:jpeg,png,gif,webp|max:2048'
+        ]);
+
+        $file = $req->file('file'); //save uploaded file into $file
+        $fileName = time()."-".$file->getClientOriginalName(); //save file name as $fileName
+        $uploadDestination = 'attachment'; //destination folder for file uploaded
+        $file->move($uploadDestination, $fileName);
+
+        $data = Lapor::find ( $req->id );
+        $data->title = $req->title;
+        $data->report = $req->report;
+        $data->file = $req->filename;
+        $data->aspect = $req->aspect;
+        $data->save ();
+        return back();
     }
 
     public function delete($id){

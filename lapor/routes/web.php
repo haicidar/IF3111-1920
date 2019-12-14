@@ -13,6 +13,8 @@
 
 Route::get('/', 'LaporController@index');
 Route::get('/detail/{id}', 'LaporController@detail');
+Route::get('/edit/{id}', 'LaporController@edit');
+Route::get('/edit/d-{id}', 'LaporController@edit');
 Route::get('/create', 'LaporController@create');
 Route::post('/create/add', 'LaporController@createAdd');
 Route::get('/delete/{id}', 'LaporController@delete');

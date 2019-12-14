@@ -31,7 +31,7 @@
         </div>
         <div class="atribut "> 
             <a class="tombol"  href="" onclick="deleteData({{$data->id}})"> Hapus </a>
-            <a class="tombol"  href=""> Edit </a>
+            <!-- <a class="tombol"  href=""> Edit </a> -->
         </div>
         <br><br>
         <div class=" isi-laporan">

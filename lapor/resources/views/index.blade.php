@@ -23,9 +23,19 @@
     <div class="banner">Simple lapor !</div>
     <div class="container-1">
         <input type="search" id="search" placeholder="Search..." />
-        <button type="submit" onclick="searchData()">Cari</button>
+        
     </div>
-    <br><br>
+
+    <div class="isi-list">
+    <div class="atribut">
+
+<a class ="cari" href="" >Cari</a>
+
+    </div>
+
+</div>
+
+
     <div class="atastextarea" text-align="center">   
         <a href="#" onclick="create()">Buat Laporan/Komentar</a>
     </div>
@@ -46,7 +56,10 @@
 
         <div class="atribut ">
             <a style="float: left">Dokumen : {{$d->file}}</p>
+            
             <a href="#" onclick="showDetail({{ $d->id }})"> Lihat Selengkapnya ></a>
+            <a href="#" onclick="edit({{ $d->id }})"> Edit&ensp;</a>
+            
             <a>  Waktu : {{$d->updated_at}} &ensp; </a>
         </div>
     </div>
@@ -86,6 +99,17 @@
                 }
             };
             xhttp.open("GET", "/delete/"+i, true);
+            xhttp.send();
+        }
+
+        function edit(i) {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("javas").innerHTML = this.responseText;
+                }
+            };
+            xhttp.open("GET", "/edit/"+i, true);
             xhttp.send();
         }
 

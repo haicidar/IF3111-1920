@@ -10,6 +10,7 @@ body{
     white-space: nowrap;
     position: relative;
     margin: 30px auto;
+    margin-bottom: 10px;
 
   }
 
@@ -26,7 +27,7 @@ body{
   -moz-border-radius: 50px;
   border-radius: 50px;
   box-shadow:0 0 1px 1px #ffffffa6;;
-   
+  margin-bottom: 10px;
     -webkit-transition: background .55s ease;
   -moz-transition: background .55s ease;
   -ms-transition: background .55s ease;
@@ -62,7 +63,7 @@ body{
     font-size: 70px;
     letter-spacing: 2px;
     word-spacing: 2px;
-    color: #000000;
+    color: #ffffff;
     font-weight: normal;
     text-decoration: none;
     font-style: normal;
@@ -74,36 +75,48 @@ body{
     }
 
 
+    .atastextarea{
 
+      text-align: center;
+      font-family: 'Raleway', Helvetica, Arial, sans-serif;
+      font-size: 15px;
+      letter-spacing: 2px;
+      word-spacing: 2px;
+      margin: 30px auto;
+
+     
+    }
     .atastextarea a {
   
-        font-family: "Lucida Sqans Unicode", "Lucida Grande", sans-serif;
-        font-size: 15px;
-        letter-spacing: 2px;
-        word-spacing: 2px;
-        color: #000000;
-        font-weight: normal;
-        text-decoration: none;
-        font-style: normal;
-        font-variant: normal;
-        text-transform: none;
-        margin: 70px auto;
-        text-align: center;
-        text-decoration: none;
-        text-decoration-line: none;
-
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: bold;
         }
 
 
             .atastextarea a:hover {
 
-                color: #65737e;
+                color: #000000;
                 text-align: center;
                 margin: 70px auto;
                 
             }
 
 
+    .tandahalaman{
+
+        text-align: center;
+        font-family: 'Raleway', Helvetica, Arial, sans-serif;
+         font-size: 40px;
+        letter-spacing: 2px;
+        word-spacing: 2px;
+         margin: 50px auto;
+         margin-bottom: 10px ;
+        font-weight: bold;
+        color: rgb(255, 255, 255), 255);
+            
+             
+            }
 
           
   #navbar {
@@ -197,7 +210,7 @@ body{
           
               
             }
-            
+
             .navbar-celah {
               display: block;
               padding: 10px 13px;
@@ -250,4 +263,136 @@ body{
                 border: 1px solid #ccc;  
               }
 
-             
+            }
+
+
+.detail-list {
+  margin: 10px auto;
+  width: 68%;
+  height: 300px auto;
+  border: 0px;
+  background: rgba(255, 23, 23, 0);
+  font-family: Helvetica, Arial, Sans-Serif;
+  
+ 
+  border-radius: 0px;
+  
+
+
+}
+
+
+.detail-list .judul {
+
+  color: white;
+text-align: left;
+font-size: 25px;
+margin-bottom: 40px;
+font-family: 'Raleway', Helvetica, Arial, sans-serif;
+font-weight: bold;
+
+
+}
+
+.detail-list .isi-laporan{
+
+color: white;
+text-align: justify;
+font-size: 14px;
+margin-bottom: 40px;
+font-family: 'Raleway', Helvetica, Arial, sans-serif;
+
+}
+
+.detail-list .atribut{
+
+  margin: 10px auto;
+  width: 100%;
+  height: 30px;
+  border: 0px;
+  background: rgba(0, 0, 0, 0);
+  font-family: Helvetica, Arial, Sans-Serif;
+  
+ 
+  border-radius: 0px;
+  
+  
+  
+
+  }
+
+  .detail-list .dokumen{
+
+    margin: 10px auto;
+    width: 100%;
+    height: 30px auto;
+    border: 0px;
+    margin-bottom: 70px;
+    font-size: 14px;
+    background: rgba(0, 0, 0, 0);
+    float: left;
+    font-family: 'Raleway', Helvetica, Arial, sans-serif;
+    border-radius: 0px;
+    
+
+    
+    
+    }
+  
+  .detail-list .atribut a{
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    text-decoration: none;
+    font-size: 14px;
+    border: 0px;
+    font-family: 'Raleway', Helvetica, Arial, sans-serif;
+    font-weight: bold;
+    }
+  
+    .detail-list .atribut a.tombol{
+      float: right ;
+      display: block;
+      color: #f2f2f2;
+      text-align: center;
+      padding: 10px 10px;
+      text-decoration: none;
+      font-size: 14px;
+      border: 0px;
+      margin-right: 15px;;
+      background: rgb(115, 159, 236);
+      font-family: 'Raleway', Helvetica, Arial, sans-serif;
+      font-weight: bold;
+      border-radius: 8px;
+
+
+      }
+
+
+      .detail-list .atribut a.tombol:hover{
+     
+    box-shadow:0 0 4px 1px rgb(7, 157, 184);;
+    
+
+        color: rgb(253, 253, 253);
+        }
+
+      .detail-list .atribut .waktu{
+
+    color: white;
+    text-align: left;
+    font-size: 14px;
+    
+    
+    }
+
+
+    .detail-list .atribut a{
+
+      color: white;
+      text-align: right;
+
+      font-size: 14px;
+    
+      }

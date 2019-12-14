@@ -71,7 +71,6 @@ class LaporController extends Controller
     }
 
     public function delete($id){
-
         // hapus file
         $data = Lapor::where('id', $id)->first();
         File::delete('attachment/' . $data->file);        
@@ -82,7 +81,7 @@ class LaporController extends Controller
     }
 
     public function search($q){
-        $data = Lapor::where('report', 'LIKE', '%'.$q)->get();
+        $data = Lapor::where('report', 'LIKE', '%'.$q.'%')->get();
         return view('index', ['data' => $data]);
     }
 }

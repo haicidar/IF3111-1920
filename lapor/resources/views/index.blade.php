@@ -22,18 +22,14 @@
     <div id = "javas">
     <div class="banner">Simple lapor !</div>
     <div class="container-1">
-        <input type="search" id="search" placeholder="Search..." />
-        
+        <input type="search" id="search" name= "search" placeholder="Search..." />    
     </div>
 
     <div class="isi-list">
-    <div class="atribut">
-
-<a class ="cari" href="" >Cari</a>
-
+        <div class="atribut">
+            <a class ="cari" href="#" onclick="searchData()" >Cari</a>
+        </div>
     </div>
-
-</div>
 
 
     <div class="atastextarea" text-align="center">   
@@ -113,15 +109,16 @@
             xhttp.send();
         }
 
-        function searchData(q) {
+        function searchData() {
             var xhttp = new XMLHttpRequest();
+            var s = document.getElementById("search").value;
             xhttp.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 200) {
                 document.getElementById("search").innerHTML =
                 this.responseText;
                 }
             };
-            xhttp.open("GET", "/search/"+q, true);
+            xhttp.open("GET", "/search/"+s, true);
             xhttp.send();
         }
     </script>

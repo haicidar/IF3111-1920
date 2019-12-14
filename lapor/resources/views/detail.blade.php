@@ -19,8 +19,7 @@
 </head>
 
 <body>
-    <!-- <div class="banner">Simple lapor !</div> -->
-
+    <div id = "javas">
     <div class="atastextarea" text-align="center">
         <a href="" >Buat Laporan/Komentar</a>
     </div>
@@ -28,27 +27,17 @@
           Detail Laporan
     </div>
     <br>
-
-
    
-    <div class="detail-list">
-    
-    
-    <div class="atribut " > 
-
-            <a class="tombol"  href="" style="float: left; background: rgba(0, 0, 0, 0);">< KEMBALI</a>
-            
-            
+    <div class="detail-list">    
+        <div class="atribut " >
+            <a class="tombol"  href="" style="float: left; background: rgba(0, 0, 0, 0);">< KEMBALI</a>            
         </div>
-
         <hr width="100%">
-    
-
         <div class="judul">
             {{ $data->title }}
         </div>
         <div class="atribut "> 
-            <a class="tombol"  href=""> Hapus </a>
+            <a class="tombol"  href="" onclick="deleteData({{$data->id}})"> Hapus </a>
             <a class="tombol"  href=""> Edit </a>
         </div>
         <br><br>
@@ -67,6 +56,7 @@
         </div>
         <br><br>
         <hr width="70%">
+    </div>
     </div>
 </body>
 </html>

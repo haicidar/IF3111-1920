@@ -41,7 +41,6 @@
         <div class="isi-laporan">
         <?php 
             $limited_string = limit_words($d->report, 50);
-            echo $limited_string;
         ?>
             <p>{{$limited_string}}</p>
         </div> 
@@ -57,52 +56,50 @@
 
     <script>
     function create() {
-    var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-        document.getElementById("javas").innerHTML =
-        this.responseText;
-        }
-    };
-    xhttp.open("GET", "/upload", true);
-    xhttp.send();
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+            document.getElementById("javas").innerHTML =
+            this.responseText;
+            }
+        };
+        xhttp.open("GET", "/create", true);
+        xhttp.send();
     }
 
 
     function showDetail(i) {
-    var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-        document.getElementById("javas").innerHTML = this.responseText;
-        }
-    };
-    xhttp.open("GET", "/detail/"+i, true);
-    xhttp.send();
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+            document.getElementById("javas").innerHTML = this.responseText;
+            }
+        };
+        xhttp.open("GET", "/detail/"+i, true);
+        xhttp.send();
     }
-
-
     function deleteData(i) {
-    var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-        document.getElementById("javas").innerHTML =
-        this.responseText;
-        }
-    };
-    xhttp.open("GET", "/hapus/"+i, true);
-    xhttp.send();
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+            document.getElementById("javas").innerHTML =
+            this.responseText;
+            }
+        };
+        xhttp.open("GET", "/delete/"+i, true);
+        xhttp.send();
     }
 
     function searchData(q) {
-    var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-        document.getElementById("search").innerHTML =
-        this.responseText;
-        }
-    };
-    xhttp.open("GET", "/search/a", true);
-    xhttp.send();
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+            document.getElementById("search").innerHTML =
+            this.responseText;
+            }
+        };
+        xhttp.open("GET", "/search/a", true);
+        xhttp.send();
     }
     </script>
 </body>

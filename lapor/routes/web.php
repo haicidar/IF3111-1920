@@ -13,3 +13,6 @@
 
 Route::get('/', 'LaporController@index');
 Route::get('/detail/{id}', 'LaporController@detail');
+Route::get('/create', 'LaporController@create');
+Route::get('/delete/{id}', 'LaporController@delete');
+
